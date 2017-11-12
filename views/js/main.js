@@ -502,9 +502,10 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
-  for (var i = 0; i < items.length; i++) {
     // document.body.scrollTop is no longer supported in Chrome.
-    // var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  // Moving scrollTop outside of the for loop only gets the scroll value once which is used for the following calulations.
+  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((scrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
