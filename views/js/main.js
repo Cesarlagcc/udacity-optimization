@@ -451,11 +451,11 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
     for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
       var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
+      var newWidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
       // document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
       var randomPizzaContainer =  document.getElementsByClassName('randomPizzaContainer');
       for (var i = 0; i < randomPizzaContainer.length; i++) {
-        randomPizzaContainer[i].style.width = newwidth;
+        randomPizzaContainer[i].style.width = newWidth;
         }
     }
   }
